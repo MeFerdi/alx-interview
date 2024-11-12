@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 import sys
 
+
 def print_usage_and_exit():
+    """Print usage message and exit with status 1."""
     print("Usage: nqueens N")
     sys.exit(1)
 
+
 def is_safe(board, row, col):
-    # Check this column on previous rows
+    """Check if it's safe to place a queen at (row, col) on the board."""
     for i in range(row):
         if board[i] == col or \
            board[i] - i == col - row or \
@@ -14,7 +17,9 @@ def is_safe(board, row, col):
             return False
     return True
 
+
 def solve_nqueens(N):
+    """Solve the N Queens problem and return all possible solutions."""
     def backtrack(row):
         if row == N:
             solutions.append([[i, board[i]] for i in range(N)])
@@ -30,7 +35,9 @@ def solve_nqueens(N):
     backtrack(0)
     return solutions
 
+
 def main():
+    """Main function to handle input and output for N Queens."""
     if len(sys.argv) != 2:
         print_usage_and_exit()
 
@@ -47,6 +54,7 @@ def main():
     solutions = solve_nqueens(N)
     for solution in solutions:
         print(solution)
+
 
 if __name__ == "__main__":
     main()
