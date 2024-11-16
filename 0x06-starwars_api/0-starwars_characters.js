@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 /**
  * Fetch and display all characters from a Star Wars movie by Movie ID.
  */
