@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
+
 def is_winner(x, nums):
+    
     """Determine the winner of the prime game after x rounds."""
     
     if not nums or x < 1:
